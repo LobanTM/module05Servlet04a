@@ -1,0 +1,110 @@
+<!DOCTYPE web-app PUBLIC
+        "-//Sun Microsystems, Inc.//DTD Web Application 2.3//EN"
+        "http://java.sun.com/dtd/web-app_2_3.dtd" >
+
+<web-app>
+
+    <display-name>Archetype Created Web Application</display-name>
+
+    <servlet>
+        <servlet-name>index</servlet-name>
+        <jsp-file>/jsp/index.jsp</jsp-file>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>index</servlet-name>
+        <url-pattern>/</url-pattern>
+    </servlet-mapping>
+
+    <!--<servlet>-->
+        <!--<servlet-name>productAddJsp</servlet-name>-->
+        <!--<jsp-file>/jsp/productAdd.jsp</jsp-file>-->
+    <!--</servlet>-->
+    <!--<servlet-mapping>-->
+        <!--<servlet-name>productAddJsp</servlet-name>-->
+        <!--<url-pattern>/addProduct</url-pattern>-->
+    <!--</servlet-mapping>-->
+
+
+
+     <!--PRODUCTS-->
+    <servlet>
+        <servlet-name>productListServlet</servlet-name>
+        <servlet-class>com.loban.servlet04.controller.servlets.ProductsList</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>productListServlet</servlet-name>
+        <url-pattern>/listProducts</url-pattern>
+    </servlet-mapping>
+    <servlet>
+        <servlet-name>productDeleteServlet</servlet-name>
+        <servlet-class>com.loban.servlet04.controller.servlets.ProductDel</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>productDeleteServlet</servlet-name>
+        <url-pattern>/deleteProduct</url-pattern>
+    </servlet-mapping>
+    <servlet>
+        <servlet-name>productEditServlet</servlet-name>
+        <servlet-class>com.loban.servlet04.controller.servlets.ProductEdit</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>productEditServlet</servlet-name>
+        <url-pattern>/editProduct</url-pattern>
+    </servlet-mapping>
+    <servlet>
+        <servlet-name>productAddtServlet</servlet-name>
+        <servlet-class>com.loban.servlet04.controller.servlets.ProductAdd</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>productAddtServlet</servlet-name>
+        <url-pattern>/addProduct</url-pattern>
+    </servlet-mapping>
+
+
+
+    <!--MANUFACTURERS-->
+    <servlet>
+        <servlet-name>manufacturerListServlet</servlet-name>
+        <servlet-class>com.loban.servlet04.controller.servlets.ManufacturersList</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>manufacturerListServlet</servlet-name>
+        <url-pattern>/listManufacturers</url-pattern>
+    </servlet-mapping>
+    <servlet>
+        <servlet-name>manufacturerDeleteServlet</servlet-name>
+        <servlet-class>com.loban.servlet04.controller.servlets.ManufacturerDel</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>manufacturerDeleteServlet</servlet-name>
+        <url-pattern>/deleteManufacturer</url-pattern>
+    </servlet-mapping><servlet>
+    <servlet-name>manufacturerEditServlet</servlet-name>
+    <servlet-class>com.loban.servlet04.controller.servlets.ManufacturerEdit</servlet-class>
+</servlet>
+    <servlet-mapping>
+        <servlet-name>manufacturerEditServlet</servlet-name>
+        <url-pattern>/editManufacturer</url-pattern>
+    </servlet-mapping>
+    <servlet>
+        <servlet-name>manufacturerAddServlet</servlet-name>
+        <servlet-class>com.loban.servlet04.controller.servlets.ManufacturerAdd</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>manufacturerAddServlet</servlet-name>
+        <url-pattern>/addManufacturer</url-pattern>
+    </servlet-mapping>
+
+
+    <!--<servlet>-->
+        <!--<servlet-name>auth</servlet-name>-->
+        <!--<servlet-class>com.loban.hiberServlet.web.Authorization</servlet-class>-->
+    <!--</servlet>-->
+    <!--<servlet-mapping>-->
+        <!--<servlet-name>auth</servlet-name>-->
+        <!--<url-pattern>/auth</url-pattern>-->
+    <!--</servlet-mapping>-->
+
+
+
+</web-app>
