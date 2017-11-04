@@ -21,6 +21,9 @@ public class ManufacturersList extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         resp.setContentType("text/html; charset=utf-8");
+
+        resp.getWriter().println("<a href=\"/module05/\">back</a>");
+
         List<Manufacturer> list = ManufacturerDAO.findAll();
         resp.getWriter().println("<h3>List of Manufacturers</h3>");
         resp.getWriter().println("<br/>");

@@ -21,25 +21,34 @@
 <form action="editProduct" method="POST" accept-charset="utf-8">
                                     <%--передача аттрибутов--%>
     <% Product product = (Product) request.getAttribute("product"); %>
+    <%--<% String m = (String) request.getAttribute("nameM");%>--%>
+    <% List<Product> products = (List<Product>) request.getAttribute("listOfProducts"); %>
+    <% List<Manufacturer> manufacturers = (List<Manufacturer>) request.getAttribute("listOfManufacturers"); %>
+
+   <%--<%= m%>--%>
 
     <p>Name:  </p>
 
+    <input type="text" hidden name="id" value="<%= product.getId()%>"/>
     <input type="text" name="name" value="<%= product.getNameProduct()%>"/>
 
     <p>Price: </p>
-    <input type="text" name="price" value=""/>
+    <input type="text" name="price" value="<%= product.getPrice()%>"/>
+    <% int size = 5;
+        if (manufacturers.size()< size) size = manufacturers.size();
+    %>
 
-    <%--<p><select size="<% out.println(list.size()); %>" multiple name="products[]">--%>
+    <p><select size="<%= size %>"  name="manufact">
         <%--<option disabled>products</option>--%>
-
-        <%--<% for (Manufacturer manufacturer : list){--%>
-            <%--out.println("<option " );--%>
-            <%--if (manufacturer.getName().equals(product.getManufacturer().getName()))--%>
-                <%--out.println("selected");--%>
-            <%--out.println(" value=\""+manufacturer.getName() +"\">"--%>
-                    <%--+manufacturer.getName()+"</option>");--%>
-        <%--}%>--%>
-    <%--</select></p>--%>
+        <% for (Manufacturer manufacturer : manufacturers ){
+            out.print("<option " );
+            if(product.getManufacturer()!=null)
+                if (manufacturer.getName().equals(product.getManufacturer().getName()))
+                 out.print("selected");
+            out.println(" value=\""+manufacturer.getId() +"\">"
+                    +manufacturer.getName()+"</option>");
+        }%>
+    </select></p>
 
     <br>
     <input type="submit" value="Update"/>

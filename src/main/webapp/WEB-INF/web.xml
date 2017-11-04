@@ -78,10 +78,11 @@
     <servlet-mapping>
         <servlet-name>manufacturerDeleteServlet</servlet-name>
         <url-pattern>/deleteManufacturer</url-pattern>
-    </servlet-mapping><servlet>
-    <servlet-name>manufacturerEditServlet</servlet-name>
-    <servlet-class>com.loban.servlet04.controller.servlets.ManufacturerEdit</servlet-class>
-</servlet>
+    </servlet-mapping>
+    <servlet>
+        <servlet-name>manufacturerEditServlet</servlet-name>
+        <servlet-class>com.loban.servlet04.controller.servlets.ManufacturerEdit</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>manufacturerEditServlet</servlet-name>
         <url-pattern>/editManufacturer</url-pattern>

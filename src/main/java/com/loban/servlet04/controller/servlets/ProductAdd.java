@@ -26,12 +26,11 @@ public class ProductAdd extends HttpServlet {
             String name = req.getParameter("name");
             product.setNameProduct(name);
 
-//            BigDecimal price = req.getParameter("price").toString();
-            product.setPrice(BigDecimal.valueOf(100));
+            BigDecimal price = BigDecimal.valueOf(Long.parseLong(req.getParameter("price")));
+            product.setPrice(price);
 
-//            String manufacturerStr = req.getParameter("");
-//            int manufacturerId = req.getParameter("");
-            Manufacturer manufacturer = ManufacturerDAO.readById(5);
+            int manufacturerId = Integer.parseInt(req.getParameter("manufact"));
+            Manufacturer manufacturer = ManufacturerDAO.readById(manufacturerId);
             product.setManufacturer(manufacturer);
 
             ProductDAO.create(product);

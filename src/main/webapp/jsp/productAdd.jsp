@@ -24,16 +24,17 @@
     <p>Price: </p>
     <input type="text" name="price"/>
 
-    <%
-        List<Manufacturer> list = ManufacturerDAO.findAll();
+    <%List<Manufacturer> list = ManufacturerDAO.findAll(); %>
+    <% int size = 5;
+        if (list.size()< size) size = list.size();
     %>
 
-    <p><select size="<% list.size(); %>" multiple name="products[]">
-        <option disabled>products</option>
-
-        <% for (Manufacturer manufacturer : list){
-            System.out.println("<option value=\""+manufacturer.getName() +"\">"
-                                +manufacturer.getName()+"</option>");
+    <p><select size="<%= size %>"  name="manufact">
+        <%--<option disabled>products</option>--%>
+        <% for (Manufacturer manufacturer : list ){
+            out.print("<option " );
+            out.println(" value=\""+manufacturer.getId() +"\">"
+                    +manufacturer.getName()+"</option>");
         }%>
     </select></p>
 
